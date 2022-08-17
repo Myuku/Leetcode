@@ -1,5 +1,6 @@
 #include <vector>
 #include <iostream>
+#include <unordered_map>
 
 using namespace std;
 
@@ -27,12 +28,34 @@ vector<int> twoSum1(vector<int>& nums, int target) {
 }
 
 
+// O(n) Solution
+vector<int> twoSum2(vector<int>& nums, int target) {
+    unordered_map<int,int> hash;
+    for (int i = 0; i < nums.size(); i++) {
+        hash[nums[i]] = i;
+    }
+
+    for (int j = 0; j < nums.size(); j++) {
+        int complement = target - nums[j];
+        if (hash.contains(nums[j]))
+    }
+
+}
+
+
 int main() {
 
-    vector<int> list = {3,2,4};
-    int target = 6;
-    vector<int> ans = twoSum1(list, target);
-    for (auto i : ans) {
+    vector<int> list = {-3,4,3,90};
+    int target = 0;
+    vector<int> ans1 = twoSum1(list, target);
+    cout << "twoSum1" <<endl;
+    for (auto i : ans1) {
+        cout << i <<endl;
+    }
+
+    vector<int> ans2 = twoSum2(list, target);
+    cout << "twoSum2" <<endl;
+    for (auto i : ans2) {
         cout << i <<endl;
     }
 }
