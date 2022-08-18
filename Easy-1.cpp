@@ -31,15 +31,21 @@ vector<int> twoSum1(vector<int>& nums, int target) {
 // O(n) Solution
 vector<int> twoSum2(vector<int>& nums, int target) {
     unordered_map<int,int> hash;
+    vector<int> res;
+
     for (int i = 0; i < nums.size(); i++) {
         hash[nums[i]] = i;
     }
 
     for (int j = 0; j < nums.size(); j++) {
         int complement = target - nums[j];
-        if (hash.contains(nums[j]))
+        if (hash.contains(complement) && hash[complement] != j) {
+            res.push_back(j);
+            res.push_back(hash[complement]);
+            return res;
+        }
     }
-
+    return res;
 }
 
 
