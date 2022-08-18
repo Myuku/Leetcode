@@ -11,6 +11,7 @@ struct ListNode {
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
+//O(max(n,m)) Solution - where n,m are l1 and l2
 ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
     int carry = 0;
     ListNode *head = new ListNode();
