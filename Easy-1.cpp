@@ -39,7 +39,7 @@ vector<int> twoSum2(vector<int>& nums, int target) {
 
     for (int j = 0; j < nums.size(); j++) {
         int complement = target - nums[j];
-        if (hash.contains(complement) && hash[complement] != j) {
+        if (hash.find(complement) != hash.end() && hash[complement] != j) {
             res.push_back(j);
             res.push_back(hash[complement]);
             return res;
@@ -51,8 +51,8 @@ vector<int> twoSum2(vector<int>& nums, int target) {
 
 int main() {
 
-    vector<int> list = {-3,4,3,90};
-    int target = 0;
+    vector<int> list = {2,5,5,90};
+    int target = 10;
     vector<int> ans1 = twoSum1(list, target);
     cout << "twoSum1" <<endl;
     for (auto i : ans1) {
