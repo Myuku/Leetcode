@@ -8,15 +8,7 @@ using namespace std;
 int search(vector<int>& nums, int target) {
     int first = 0;
     int last = nums.size()-1;
-
-    // if (nums.size() == 1) {
-    //     if (nums[0] == target) {
-    //         return 0;
-    //     } else {
-    //         return -1;
-    //     }
-    // }
-
+    
     while (first <= last) {
         int middle = first + ((last - first) / 2);
 
