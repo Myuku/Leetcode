@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution {
 private:
-    priority_queue<int, vector<int>, less<int>> pq;
+    priority_queue<int> pq;
 
 public:
     int lastStoneWeight(vector<int>& stones) {
@@ -22,10 +22,8 @@ public:
             if (first != second) {
                 first -= second;
                 pq.push(first);
-            } else if (first == second) {
-                pq.push(0);
             }
         }
-        return pq.top();
+        return pq.empty() ? 0 : pq.top();
     }
 };
