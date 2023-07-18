@@ -31,6 +31,27 @@ public:
     }
 };
 
+// // Alt Solution
+// class Solution {
+// public:
+//     bool isHappy(int n) {
+//         set<int> visited;
+//         int val = n;
+//         while (val != 1 && !visited.count(val)) {
+//             int total = 0;
+//             string num = to_string(val);
+//             for (char& i : num) {
+//                 total += pow(int((i - '0')), 2);
+//             }
+//             visited.insert(val);
+//             val = total;
+//         }
+//         return val == 1;
+//     }
+// };
+
+
+
 int main() {
 
     Solution test;
